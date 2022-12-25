@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册验证</title>
+</head>
+<style>
+     div  {
+        margin-left:30px;
+        margin-top:20px;
+    }
+     h1 {
+         margin-left:50px;
+     }
+
+</style>
+<body>
+    <h1>注册</h1>
+    <div>
+        <input id ="ip1" type="text" placeholder="请输入用户名..."><div id="i1" style="color:red;display:none">用户名不能为空</div>
+        <br>
+        <input id = "ip2"  type="password" placeholder="请输入密码..."><br>
+        <input id = "ip3" type="password" placeholder="请输入相同密码..."> <div id="i2" style="color:red;display:none">两次密码必须相同</div>
+        <br><br>
+        <button style="margin: 10px 50px" >提交</button>
+    </div>
+    <script>
+        var ip1 = document.querySelector('#ip1');
+        var ip2 = document.querySelector('#ip2');
+        var ip3 = document.querySelector('#ip3');
+        var i1 = document.querySelector('#i1');
+        var i2 = document.querySelector('#i2');
+        ip1.addEventListener('blur',function(){
+            if(ip1.value === "")
+            {
+                i1.style.display = "block";
+            }else
+            {
+                i1.style.display = "none";
+            }
+        })
+        ip3.addEventListener('blur',function(){
+            if(ip2.value != ip3.value)
+            {
+                i2.style.display = "block";
+            }else
+            {
+                i2.style.display = "none";
+            }
+        })
+        var btn = document.querySelector('button');
+        setInterval(function(){
+            if(i1.style.display != "none" || i2.style.display != "none")
+            {
+                btn.disabled="disabled";
+            }else
+            {
+                btn.disabled="";
+            }
+        },100)
+    </script>
+</body>
+</html>
