@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复制</title>
+</head>
+<body>
+    <div>
+        <input id="ip1" type="text">
+        <button>复制</button>
+        <input id="ip2" type="text">
+    </div>
+    <script>
+        var ip1 = document.querySelector('#ip1');
+        var ip2 = document.querySelector('#ip2');
+        var btn = document.querySelector('button');
+        btn.addEventListener("click",function(){
+            ip2.value = ip1.value;
+        })
+    </script>
+</body>
+</html>
