@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>第10次作业</title>
+</head>
+<style>
+    div {
+        text-align: center;
+        margin: 40px auto;
+    }
+    input {
+        height: 60px;
+        width: 100px;
+        border-radius: 8px;
+        border: pink 2px solid;
+        background-color: white;
+        font-size: 30px;
+        font-family: 微软雅黑;
+        font-weight: 700;
+    }
+</style>
+<body>
+    <div>
+        <h1>这是主页</h1>
+        <input id="input1" type="button" value="注册"> &nbsp;&nbsp;|&nbsp;&nbsp; <input id="input2" type="button" value="登录">
+    </div>
+</body>
+<script>
+    var input1 = document.querySelector('#input1');
+    var input2 = document.querySelector('#input2');
+    input1.addEventListener('click',function(){
+        var win1 = window.open('','','height=300,width=500');
+        win1.onload = function(){
+            win1.document.title="用户登录";
+        };
+        win1.document.write('用户名:  <input type="text" placeholder="请输入你的姓名...">\n' +
+            '        <br><br>\n' +
+            '        密码: <input type="password" placeholder="请输入你的密码...">\n' +
+            '        <br><br>' +
+            '        <input id ="t1" type="submit" value="立即注册" onclick="window.close()">\n');
+        win1.focus();
+    })
+    input2.addEventListener('click',function(){
+        const win2 = window.open('','','height=300,width=500');
+        win2.document.write('<h1>游客，你好！</h1>'+
+            '用户名:  <input type="text" placeholder="请输入你的姓名...">\n' +
+            '        <br><br>\n' +
+            '        密码: <input type="password" placeholder="请输入你的密码...">\n' +
+            '        <br><br>' +
+            '        <input id ="t1" type="submit" value="立即登录" onclick="window.close()">\n');
+        win2.focus();
+    })
+</script>
+</html>
